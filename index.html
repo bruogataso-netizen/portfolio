@@ -1,0 +1,1087 @@
+<title>Bruna Ogata · Produto</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Portfólio de produto de Bruna Ogata: discovery, priorização, delivery e adoção de produtos digitais.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Figtree:wght@400;500;600;700&family=Lato:wght@700;900&display=swap">
+<style>
+/* Layout: paleta da capa do LinkedIn (azul acinzentado, marinho, vermelho suave na barra lateral).
+   Página única; cases em carrossel arrastável; cada case abre em resumo de 30 segundos + jornada clicável por etapas. */
+:root{
+  --studio:#E8EEF8;
+  --studio-deep:#D3E0F3;
+  --sweater:#B3202E;
+  --sweater-soft:#FCEAEA;
+  --ink:#1B2A47;
+  --muted:#55627A;
+  --bg:#F7F9FC;
+  --surface:#FFFFFF;
+  --line:#DCE4F0;
+  --blue-text:#3F5F9E;
+  --navy:#2F62A8;
+  --on-navy:#FFFFFF;
+  --on-red:#FFFFFF;
+  --ok:#2F8F62;
+  --band:#D4E5F7; --on-band:#1B2A47; --band-muted:#4A5B73; --band-accent:#B3202E; --band-card:rgba(255,255,255,.7); --band-line:rgba(47,98,168,.18);
+  --display:"Source Serif 4", "Georgia", "Times New Roman", serif;
+  --body:"Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --caps:"Lato", "Figtree", "Segoe UI", system-ui, sans-serif;
+  --gut-l:max(16px, env(safe-area-inset-left, 0px));
+  --gut-r:max(16px, env(safe-area-inset-right, 0px));
+  --radius:14px;
+}
+:root{color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body.locked{overflow:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--studio)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sweater);outline-offset:3px;border-radius:6px}
+h1,h2,h3,h4{font-family:var(--display);line-height:1.12;text-wrap:balance;margin:0}
+p{margin:0}
+.wrap{max-width:1160px;margin:0 auto;padding-left:var(--gut-l);padding-right:var(--gut-r)}
+.label{font-family:var(--caps);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 15px/1 var(--body);padding:14px 20px;border-radius:999px;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .2s ease, background .2s ease, color .2s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-red{background:var(--sweater);color:var(--on-red)}
+.btn-ghost{border-color:currentColor;background:transparent;color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--bg)}
+.arrow{transition:transform .2s ease;display:inline-block}
+a:hover .arrow,button:hover .arrow{transform:translateX(4px)}
+.chip{font-family:var(--caps);font-weight:700;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);white-space:nowrap;background:var(--surface)}
+.chip.live{border-color:var(--sweater);color:var(--sweater)}
+.chip.live::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--sweater);margin-right:6px;vertical-align:1px;animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.25}}
+.todo{display:inline-block;font-family:var(--caps);font-weight:700;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;background:var(--sweater-soft);color:var(--sweater);border:1px dashed var(--sweater);padding:3px 8px;border-radius:6px;vertical-align:2px}
+.reveal{transition:opacity .6s ease, transform .6s ease}
+.js .reveal.pending{opacity:.001;transform:translateY(18px)}
+
+/* NAV */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--studio);color:var(--ink);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.brand{font-family:var(--display);font-weight:700;font-size:20px;text-decoration:none;display:flex;align-items:center;gap:10px}
+.brand i{width:4px;height:22px;border-radius:2px;background:var(--sweater);display:inline-block}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;align-items:center}
+.nav ul a,.nav ul button{text-decoration:none;font:600 15px/1.2 var(--body);color:inherit;background:none;border:0;cursor:pointer;padding:0}
+.nav ul a:hover{text-decoration:underline;text-underline-offset:4px}
+.nav ul .cv{background:var(--navy);color:var(--on-navy);padding:10px 16px;border-radius:999px}
+@media (max-width:720px){.nav ul li.hide-sm{display:none}.nav ul{gap:14px}}
+
+/* HERO */
+.hero{background:linear-gradient(120deg,var(--bg) 0%,var(--studio) 70%);overflow:hidden;position:relative}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;background:var(--studio-deep);pointer-events:none}
+.hero::before{width:520px;height:520px;right:-140px;top:-180px;opacity:.7}
+.hero::after{width:360px;height:360px;left:-160px;bottom:-200px;opacity:.5}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.3fr .8fr;gap:40px;align-items:center;padding-block:64px 56px}
+.hero-copy{min-width:0;border-left:4px solid var(--sweater);padding-left:clamp(18px,3vw,32px)}
+.avail{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);color:var(--blue-text);padding:7px 14px;border-radius:999px;font-weight:600;font-size:14px}
+.avail b{width:9px;height:9px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(47,143,98,.6);animation:pulse 2s infinite;flex:none}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(47,143,98,0)}100%{box-shadow:0 0 0 0 rgba(47,143,98,0)}}
+.rot{display:inline-block;color:var(--sweater);transition:opacity .3s ease, transform .3s ease}
+.rot.out{opacity:0;transform:translateY(6px)}
+.hero .kicker{display:block;color:var(--blue-text);font-size:14px;letter-spacing:.24em;margin-top:22px}
+.hero h1{font-size:clamp(38px,5.4vw,68px);font-weight:700;letter-spacing:-.01em;margin:10px 0 18px}
+.hero h1 .red{color:var(--sweater)}
+.hero .lede{font-size:19px;max-width:34em;color:var(--muted)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero-photo{position:relative;min-width:0;display:flex;justify-content:center}
+.hero-photo img{display:block;width:100%;height:auto;max-width:380px;aspect-ratio:1/1;object-fit:cover;object-position:center 12%;border-radius:50%;border:8px solid var(--surface);box-shadow:0 24px 60px -24px rgba(27,42,71,.45);background:var(--studio-deep);filter:saturate(.72) brightness(1.03);transition:transform .5s ease}
+.hero-photo:hover img{transform:rotate(-2deg) scale(1.02)}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0 16px;border-top:1px solid var(--line);margin-top:36px}
+.hero-stats div{padding:16px 0 0;min-width:0}
+.hero-stats strong{font-family:var(--display);font-size:clamp(20px,2vw,27px);white-space:nowrap;display:block;line-height:1;font-variant-numeric:tabular-nums}
+.hero-stats span{font-size:13.5px;line-height:1.35;display:block;margin-top:6px;color:var(--muted)}
+.study{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:22px;font-size:14px;color:var(--muted)}
+.study b{font-family:var(--caps);font-size:10.5px;letter-spacing:.14em;color:var(--blue-text);text-transform:uppercase}
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;padding-block:36px 44px}
+  .hero-photo{order:-1;justify-content:flex-start}
+  .hero-photo img{max-width:180px;border-width:6px}
+  .hero-stats{grid-template-columns:repeat(2,1fr);row-gap:14px}
+}
+
+/* SECTIONS */
+section.band{padding-block:88px}
+section.alt{background:var(--surface);border-block:1px solid var(--line)}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px;margin-bottom:32px}
+.sec-head .label{color:var(--sweater);display:block;margin-bottom:10px}
+.sec-head h2{font-size:clamp(32px,4.4vw,48px);letter-spacing:-.01em;font-weight:700}
+.sec-head p{color:var(--muted);max-width:30em}
+
+/* CARROSSEL */
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(280px,360px);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 24px;scrollbar-width:thin;cursor:grab;overscroll-behavior-x:contain}
+.rail.drag{cursor:grabbing;scroll-snap-type:none;user-select:none}
+.rail-ctrl{display:flex;align-items:center;gap:10px}
+.rail-ctrl button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-size:18px;cursor:pointer;transition:background .2s,color .2s}
+.rail-ctrl button:hover{background:var(--navy);color:var(--on-navy)}
+.rail-ctrl span{font-family:var(--caps);font-weight:700;font-size:11px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
+.card{position:relative;scroll-snap-align:start;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;gap:12px;min-width:0;transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease, opacity .6s ease;cursor:pointer;overflow:hidden}
+.card:hover{transform:translateY(-6px);box-shadow:0 22px 44px -22px rgba(27,42,71,.4);border-color:var(--blue-text)}
+.card .top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.card .num{font-family:var(--caps);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:11px;color:var(--blue-text)}
+.card .metric{font-family:var(--display);font-weight:700;font-size:38px;line-height:1;color:var(--blue-text)}
+.card .metric small{display:block;font-family:var(--body);font-weight:500;font-size:14px;color:var(--muted);margin-top:6px;line-height:1.35}
+.card h3{font-size:22px;font-weight:700}
+.card p{color:var(--muted);font-size:15.5px}
+.card .more{max-height:0;overflow:hidden;opacity:0;transition:max-height .4s ease, opacity .3s ease}
+.card:hover .more,.card:focus-within .more{max-height:140px;opacity:1}
+@media (hover:none){.card .more{max-height:none;opacity:1}}
+.card .go{margin-top:auto;align-self:flex-start;background:none;border:0;padding:8px 0 0;font:700 16px/1 var(--body);color:var(--sweater);cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+.card .go::after{content:"";position:absolute;inset:0}
+.card .stripe{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--sweater);transition:width .25s ease}
+.card:hover .stripe{width:5px}
+
+/* NÚMEROS */
+.toggle{display:inline-flex;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:4px}
+.toggle button{font:600 14px/1 var(--body);border:0;background:transparent;color:var(--muted);padding:10px 16px;border-radius:999px;cursor:pointer}
+.toggle button[aria-pressed="true"]{background:var(--navy);color:var(--on-navy)}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media (max-width:960px){.nums{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.nums{grid-template-columns:1fr}}
+.n{font:inherit;text-align:left;color:inherit;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:20px;min-width:0;cursor:pointer;transition:border-color .2s, transform .2s;display:flex;flex-direction:column}
+.n:hover{border-color:var(--blue-text);transform:translateY(-3px)}
+.n .val{font-family:var(--display);font-weight:700;font-size:clamp(26px,2.8vw,34px);line-height:1.05;font-variant-numeric:tabular-nums;color:var(--sweater);transition:color .3s ease}
+.n .what{font-weight:600;margin-top:10px;line-height:1.35;font-size:15.5px}
+.n .src{font-size:13px;color:var(--blue-text);margin-top:auto;padding-top:10px;font-weight:600}
+.n .before{display:none}
+.show-before .n .before{display:inline}
+.show-before .n .after{display:none}
+.show-before .n .val{color:var(--muted)}
+
+/* COMO EU TRABALHO */
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:16px}
+.flow button{font:inherit;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;cursor:pointer;color:var(--ink);display:flex;flex-direction:column;gap:6px;transition:background .2s,border-color .2s,box-shadow .2s;min-width:0}
+.flow button .label{color:var(--muted)}
+.flow button strong{font-family:var(--display);font-size:19px;line-height:1.15}
+.flow button[aria-selected="true"]{background:var(--studio);border-color:var(--blue-text);box-shadow:inset 0 -4px 0 var(--sweater)}
+.flow button[aria-selected="true"] .label{color:var(--blue-text)}
+@media (max-width:860px){.flow{grid-template-columns:repeat(2,1fr)}.flow button:last-child{grid-column:1/-1}}
+.flow-panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:grid;grid-template-columns:1fr 1.3fr;gap:28px;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (max-width:760px){.flow-panel{grid-template-columns:1fr}}
+.flow-panel h3{font-size:28px;margin-bottom:10px}
+.flow-panel > div > p{color:var(--muted)}
+.where{display:flex;flex-direction:column;gap:10px;min-width:0}
+.where > .label{color:var(--sweater)}
+.where button{font:inherit;text-align:left;display:flex;gap:14px;align-items:flex-start;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 14px;cursor:pointer;color:var(--ink);transition:border-color .2s, transform .2s}
+.where button:hover{border-color:var(--blue-text);transform:translateX(3px)}
+.where button b{font-family:var(--caps);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-text);padding-top:3px;flex:0 0 104px}
+.where button span{font-size:15.5px;line-height:1.45;min-width:0}
+@media (max-width:480px){.where button{flex-direction:column;gap:4px}.where button b{flex:none}}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;align-items:center}
+.tools .label{color:var(--muted);margin-right:6px}
+
+/* SOBRE */
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+@media (max-width:860px){.about-grid{grid-template-columns:1fr;gap:32px}}
+.portrait{position:relative;border-radius:18px;overflow:hidden;background:var(--studio-deep);max-width:420px;margin:0}
+.portrait img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center 18%;filter:saturate(.72) brightness(1.03)}
+.about-text p{margin-bottom:14px;max-width:38em}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:22px 0 30px}
+.facts div{border-top:2px solid var(--blue-text);padding-top:10px;min-width:0}
+.facts .label{color:var(--muted);display:block;font-size:11px}
+.facts strong{font-weight:600;line-height:1.35;display:block}
+.timeline{list-style:none;margin:0;padding:0;position:relative}
+.timeline::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.timeline li{position:relative;padding:0 0 22px 38px}
+.timeline li::before{content:"";position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--blue-text)}
+.timeline li.now::before{background:var(--sweater);border-color:var(--sweater)}
+.timeline .when{font-family:var(--caps);font-weight:700;font-size:11px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+.timeline h4{font-size:20px;margin:4px 0 4px;font-weight:700}
+.timeline p{color:var(--muted);font-size:15.5px;max-width:44em}
+
+/* CONTATO */
+.contact{background:var(--studio);border-top:1px solid var(--line)}
+.contact .wrap{padding-block:80px;display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
+@media (max-width:760px){.contact .wrap{grid-template-columns:1fr}}
+.contact h2{font-size:clamp(36px,5vw,58px);font-weight:700;border-left:4px solid var(--sweater);padding-left:20px}
+.contact p{margin-top:14px;font-size:18px;max-width:30em;color:var(--muted)}
+.contact-box{display:flex;flex-direction:column;gap:12px}
+.contact-box a,.contact-box > button,.copyrow{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;text-decoration:none;font:600 16px/1.3 var(--body);color:var(--ink);min-width:0;cursor:pointer;text-align:left}
+.contact-box a:hover,.contact-box > button:hover{border-color:var(--blue-text)}
+.copyrow{cursor:default}
+.copyrow span{overflow-wrap:anywhere;user-select:all}
+.copyrow button{font:600 13px/1 var(--body);background:var(--navy);color:var(--on-navy);border:0;border-radius:999px;padding:8px 12px;cursor:pointer;white-space:nowrap}
+footer{padding-block:28px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+/* PAINEL */
+.panel{position:fixed;inset:0;z-index:100;background:var(--bg);overflow-y:auto;overscroll-behavior:contain;padding-bottom:env(safe-area-inset-bottom,0px);animation:rise .35s ease}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.panel-bar{position:sticky;top:0;z-index:5;background:var(--studio);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.panel-bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px}
+.panel-bar button{white-space:nowrap;flex:none;font:600 15px/1 var(--body);background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:10px 16px;cursor:pointer}
+.panel-bar .where-t{font-family:var(--caps);font-weight:700;color:var(--blue-text);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.case-hero{background:linear-gradient(120deg,var(--bg) 0%,var(--studio) 75%);padding-block:36px 40px}
+.case-hero .label{color:var(--blue-text)}
+.case-hero h2{font-size:clamp(30px,4.4vw,50px);font-weight:700;margin:12px 0 14px;max-width:20em;border-left:4px solid var(--sweater);padding-left:18px}
+.case-hero .sum{font-size:18.5px;max-width:42em;color:var(--muted)}
+.meta{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:26px;border-top:1px solid var(--line)}
+.meta div{padding:14px 16px 0 0;min-width:0}
+.meta .label{color:var(--blue-text);display:block;margin-bottom:4px;font-size:10.5px}
+.meta strong{font-weight:600;display:block;line-height:1.35}
+.meta span{font-size:14px;color:var(--muted);display:block;line-height:1.35}
+@media (max-width:760px){.meta{grid-template-columns:repeat(2,1fr);row-gap:14px}}
+.case-main{padding-block:36px 72px}
+.tldr-h{margin-bottom:16px}
+.tldr-h h3,.journey-h h3{font-size:26px}
+.tldr{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media (max-width:960px){.tldr{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.tldr{grid-template-columns:1fr}}
+.tl{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;min-width:0}
+.tl .label{color:var(--blue-text);display:block;margin-bottom:8px;font-size:11px}
+.tl p{font-size:15.5px;color:var(--muted)}
+.tl.res{background:var(--studio);border-color:var(--studio-deep)}
+.tl.res .label{color:var(--sweater)}
+.tl.res ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.tl.res li{font-size:14.5px;line-height:1.35;color:var(--muted)}
+.tl.res li strong{display:block;font-family:var(--display);font-size:21px;color:var(--ink);line-height:1.15}
+.journey-h{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap;margin:44px 0 18px}
+.journey-h p{color:var(--muted);font-size:15px}
+.stepper{display:flex;overflow-x:auto;padding-bottom:6px;scrollbar-width:none;margin-bottom:18px}
+.stepper button{flex:1 0 auto;min-width:118px;font:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:left;color:var(--muted)}
+.stepper button .dot{display:flex;align-items:center;margin-bottom:10px}
+.stepper button .dot i{width:30px;height:30px;border-radius:50%;border:2px solid var(--line);background:var(--surface);display:grid;place-items:center;font:700 13px/1 var(--caps);font-style:normal;color:var(--muted);flex:none;transition:all .25s}
+.stepper button .dot::after{content:"";flex:1;height:2px;background:var(--line);margin:0 8px;transition:background .25s}
+.stepper button:last-child .dot::after{display:none}
+.stepper button span{font-weight:600;font-size:14.5px;line-height:1.25;display:block;padding-right:10px}
+.stepper button.done .dot i{border-color:var(--blue-text);color:var(--blue-text)}
+.stepper button.done .dot::after{background:var(--blue-text)}
+.stepper button[aria-selected="true"]{color:var(--ink)}
+.stepper button[aria-selected="true"] .dot i{background:var(--sweater);border-color:var(--sweater);color:var(--on-red);transform:scale(1.1)}
+.stage{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(20px,3vw,32px);animation:fade .35s ease;min-width:0}
+.stage > .label{color:var(--sweater);display:block;margin-bottom:8px}
+.stage h4{font-size:clamp(22px,2.6vw,28px);margin-bottom:12px}
+.stage p{max-width:46em;margin-bottom:12px;color:var(--muted)}
+.stage ul{max-width:46em;padding-left:20px;margin:0 0 12px;color:var(--muted)}
+.stage li{margin-bottom:5px}
+.stage-nav{display:flex;justify-content:space-between;gap:10px;margin-top:20px;border-top:1px solid var(--line);padding-top:16px}
+.stage-nav button{font:600 15px/1 var(--body);background:var(--bg);border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:11px 16px;cursor:pointer}
+.stage-nav button:hover{border-color:var(--blue-text)}
+.stage-nav button[disabled]{opacity:.35;cursor:default}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:14px 0}
+@media (max-width:760px){.grid3,.grid2{grid-template-columns:1fr}}
+.box{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:16px;min-width:0}
+.box .label{color:var(--blue-text);display:block;margin-bottom:6px;font-size:10.5px}
+.box h5{font-family:var(--display);font-size:18px;margin:0 0 6px;line-height:1.2}
+.box p,.box li{font-size:15px;color:var(--muted)}
+.box p{margin:0}
+.box ul{padding-left:18px;margin:0}
+.big{font-family:var(--display);font-weight:700;font-size:32px;line-height:1;color:var(--blue-text);display:block;margin-bottom:6px}
+.callout{background:var(--sweater-soft);border-left:4px solid var(--sweater);border-radius:0 10px 10px 0;padding:14px 18px;margin:14px 0;max-width:46em}
+.callout .label{color:var(--sweater);display:block;margin-bottom:4px;font-size:10.5px}
+.callout p{margin:0;font-size:17px;font-weight:500;color:var(--ink)}
+.pipeline{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.pipeline span{background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:14px;font-weight:600}
+.pipeline span.hl{border-color:var(--sweater);color:var(--sweater)}
+.pipeline em{font-style:normal;color:var(--muted)}
+.decision{border-top:1px solid var(--line);padding-block:14px}
+.decision summary{cursor:pointer;font-family:var(--display);font-weight:700;font-size:19px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.decision summary::-webkit-details-marker{display:none}
+.decision summary::after{content:"+";font-family:var(--caps);color:var(--sweater);font-size:22px;line-height:1;transition:transform .2s}
+.decision[open] summary::after{transform:rotate(45deg)}
+.decision dl{display:grid;grid-template-columns:140px 1fr;gap:8px 16px;margin:12px 0 0}
+.decision dt{font-family:var(--caps);font-weight:700;font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--blue-text);padding-top:4px}
+.decision dd{margin:0;color:var(--muted)}
+@media (max-width:600px){.decision dl{grid-template-columns:1fr}.decision dd{margin-bottom:8px}}
+.bars{display:flex;flex-direction:column;gap:16px;margin:14px 0;max-width:46em}
+.bar .row{display:flex;justify-content:space-between;gap:12px;font-weight:600;margin-bottom:6px;flex-wrap:wrap;font-size:15.5px}
+.bar .row span:last-child{color:var(--sweater)}
+.track{position:relative;height:28px;background:var(--bg);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.track i{position:absolute;left:0;height:50%;width:0;transition:width 1.1s cubic-bezier(.2,.8,.2,1)}
+.track i.b{top:0;background:var(--studio-deep)}
+.track i.a{bottom:0;background:var(--sweater)}
+.legend{display:flex;gap:16px;font-size:13px;color:var(--muted)}
+.legend b{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px}
+.table-wrap{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%;min-width:480px;font-size:15px}
+th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--caps);font-weight:700;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+td.after{color:var(--sweater);font-weight:700}
+.tracker{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0}
+@media (max-width:640px){.tracker{grid-template-columns:repeat(2,1fr)}}
+.tracker div{border-top:5px solid var(--line);padding-top:10px;min-width:0}
+.tracker div.done{border-color:var(--blue-text)}
+.tracker div.now{border-color:var(--sweater)}
+.tracker strong{display:block;font-family:var(--display);font-size:17px}
+.tracker span{font-size:14px;color:var(--muted)}
+.next-case{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:44px}
+.next-case button{font:inherit;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 20px;cursor:pointer;color:var(--ink);min-width:0;flex:1 1 240px}
+.next-case button:hover{border-color:var(--blue-text)}
+.next-case .label{color:var(--muted);display:block;font-size:10.5px}
+.next-case strong{font-family:var(--display);font-size:18px}
+
+.tracker.six{grid-template-columns:repeat(6,1fr)}
+@media (max-width:860px){.tracker.six{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:480px){.tracker.six{grid-template-columns:repeat(2,1fr)}}
+.box.pick{border-color:var(--sweater);background:var(--sweater-soft)}
+.box.pick .label{color:var(--sweater)}
+.forces{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:14px 0}
+@media (max-width:600px){.forces{grid-template-columns:1fr}}
+.rice{display:flex;flex-direction:column;gap:8px;margin:16px 0;max-width:46em}
+.rice-row{display:grid;grid-template-columns:minmax(120px,190px) 1fr 48px;gap:12px;align-items:center;font-size:14.5px}
+.rice-row span{color:var(--muted);line-height:1.25}
+.rice-row.in span{color:var(--ink);font-weight:600}
+.rice-row b{font-variant-numeric:tabular-nums;text-align:right;color:var(--muted)}
+.rice-row.in b{color:var(--ink)}
+.rt{height:14px;background:var(--bg);border-radius:4px;overflow:hidden}
+.rt i{display:block;height:100%;width:0;background:var(--studio-deep);border-radius:4px;transition:width 1s cubic-bezier(.2,.8,.2,1)}
+.rice-row.in .rt i{background:var(--sweater)}
+@media (max-width:600px){.rice-row{grid-template-columns:1fr 44px;gap:4px 10px}.rice-row span{grid-column:1/-1}}
+.rice-row span small{display:block;font-size:12px;color:var(--muted);font-weight:500;font-variant-numeric:tabular-nums}
+.rice-row.judg span small::after{content:" ★ entra por julgamento";color:var(--sweater)}
+
+.mx-wrap{display:grid;grid-template-columns:1.5fr 1fr;gap:16px;margin:16px 0 10px;align-items:start}
+@media (max-width:820px){.mx-wrap{grid-template-columns:1fr}}
+.mx{position:relative;display:grid;grid-template-columns:1fr 1fr;grid-template-areas:"q2 q1" "q4 q3";gap:6px;padding:0 0 24px 24px;min-width:0}
+.mx .q1{grid-area:q1}.mx .q2{grid-area:q2}.mx .q3{grid-area:q3}.mx .q4{grid-area:q4}
+.mx{grid-template-areas:"q1 q2" "q3 q4"}
+.mx-y{position:absolute;left:0;top:50%;transform:translate(-40%,-50%) rotate(-90deg);font:700 10.5px/1 var(--caps);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.mx-x{position:absolute;left:50%;bottom:0;transform:translateX(-50%);font:700 10.5px/1 var(--caps);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.q{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px;display:flex;flex-wrap:wrap;gap:6px;align-content:flex-start;min-height:120px;min-width:0}
+.q1{background:var(--sweater-soft)}
+.qt{flex-basis:100%;font:700 10px/1.3 var(--caps);letter-spacing:.12em;text-transform:uppercase;color:var(--blue-text);margin-bottom:2px}
+.mi{font:600 13.5px/1.25 var(--body);border-radius:999px;padding:7px 11px;cursor:pointer;border:1.5px solid transparent;text-align:left;transition:transform .15s, box-shadow .15s}
+.mi:hover{transform:translateY(-2px)}
+.mi.in{background:var(--sweater);color:var(--on-red)}
+.mi.later{background:var(--surface);color:var(--blue-text);border-color:var(--blue-text)}
+.mi.out{background:var(--studio-deep);color:var(--muted)}
+.mi.judg::after{content:" ★"}
+.mi[aria-pressed="true"]{box-shadow:0 0 0 3px var(--surface),0 0 0 5px var(--ink)}
+.mx-why{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--sweater);border-radius:0 10px 10px 0;padding:16px 18px;min-width:0}
+.mx-why .label{color:var(--sweater);display:block;margin-bottom:6px;font-size:10.5px}
+.mx-why strong{font-family:var(--display);font-size:19px;display:block;margin-bottom:6px}
+.mx-why p{margin:0;font-size:15.5px}
+@media (max-width:480px){.mx{grid-template-columns:1fr;grid-template-areas:"q1" "q2" "q3" "q4";padding-left:0}.mx-y,.mx-x{display:none}}
+
+
+/* REFINO: vermelho só para ação e resultado; faixas marinho para ritmo */
+.sec-head .label,.stage > .label,.where > .label{color:var(--blue-text)}
+.callout{background:var(--studio);border-left-color:var(--blue-text)}
+.callout .label{color:var(--blue-text)}
+.callout.pm{background:var(--sweater-soft);border-left-color:var(--sweater)}
+.callout.pm .label{color:var(--sweater)}
+.flow button[aria-selected="true"]{box-shadow:inset 0 -4px 0 var(--navy)}
+.stepper button[aria-selected="true"] .dot i{background:var(--navy);border-color:var(--navy);color:var(--on-navy)}
+.mi.in{background:var(--navy);color:var(--on-navy)}
+.q1{background:var(--studio)}
+.mx-why{border-left-color:var(--navy)}
+.mx-why .label{color:var(--blue-text)}
+.timeline li.now::before{background:var(--navy);border-color:var(--navy)}
+.pipeline span.hl{border-color:var(--navy);color:var(--ink);background:var(--studio)}
+.box.pick{border-color:var(--navy);background:var(--studio)}
+.box.pick .label{color:var(--blue-text)}
+.chip.live{border-color:var(--sweater);color:var(--sweater)}
+.card .metric{color:var(--sweater)}
+.card{border-top:4px solid var(--c,var(--blue-text))}
+.card[data-case="case-abastecimento"]{--c:#3F5F9E}
+.card[data-case="case-agendamento"]{--c:#6E8FC7}
+.card[data-case="case-plm"]{--c:#8DB6E6}
+.card[data-case="case-otb"]{--c:#B3202E}
+.card[data-case="case-app-treino"]{--c:#E07A7F}
+.card .stripe{display:none}
+section.band.dark{background:var(--band);color:var(--on-band);border:0}
+.dark .sec-head .label{color:var(--band-accent)}
+.dark .sec-head h2{color:var(--on-band)}
+.dark .toggle{background:var(--band-card);border-color:var(--band-line)}
+.dark .toggle button{color:var(--band-muted)}
+.dark .toggle button[aria-pressed="true"]{background:var(--on-band);color:var(--band)}
+.dark .n{background:var(--band-card);border-color:var(--band-line);color:var(--on-band)}
+.dark .n:hover{border-color:var(--band-accent)}
+.dark .n .val{color:var(--band-accent)}
+.dark .show-before .n .val,.dark.show-before .n .val{color:var(--band-muted)}
+.dark .n .what{color:var(--on-band)}
+.dark .n .src{color:var(--band-muted)}
+.contact{background:var(--band);color:var(--on-band);border:0}
+.contact h2{color:var(--on-band)}
+.contact p{color:var(--band-muted)}
+
+/* CURRÍCULO */
+.cv-dl{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:18px}
+#ats-msg{font-size:14px;color:var(--muted)}
+.cv-grid{display:grid;grid-template-columns:1fr 2fr;gap:40px;padding-block:36px 72px}
+@media (max-width:860px){.cv-grid{grid-template-columns:1fr;gap:24px}}
+.cv-side{display:flex;flex-direction:column;gap:12px;min-width:0}
+.cv-job{border-top:1px solid var(--line);padding-block:18px}
+.cv-job .when{font-family:var(--caps);font-weight:700;font-size:11px;letter-spacing:.12em;color:var(--blue-text);text-transform:uppercase}
+.cv-job h4{font-size:20px;margin:4px 0 8px}
+.cv-job ul{margin:0;padding-left:20px;color:var(--muted);font-size:15.5px}
+.cv-job li{margin-bottom:6px}
+
+.focos{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:22px}
+.focos .label{color:var(--blue-text);margin-right:4px}
+.foco{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-weight:600;font-size:14.5px;color:var(--ink);display:inline-flex;align-items:center;gap:8px}
+.foco::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--sweater)}
+.study{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-wrap:wrap;gap:8px 22px;font-size:14px;color:var(--muted)}
+.study li{display:flex;gap:8px;align-items:baseline}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+@media (max-width:860px){.cards{grid-template-columns:1fr}}
+.cards .card .metric{font-size:32px}
+.facts4{display:grid;grid-template-columns:1fr 1fr;gap:12px 18px;margin:4px 0 0;border-top:1px solid var(--line);padding-top:14px}
+@media (max-width:520px){.facts4{grid-template-columns:1fr}}
+.facts4 div{min-width:0}
+.facts4 dt{font-family:var(--caps);font-weight:700;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-text);margin-bottom:3px}
+.facts4 dd{margin:0;font-size:14.5px;line-height:1.45;color:var(--muted)}
+.card[data-case="case-app-treino"]{--c:#B3202E}
+.tracker.five{grid-template-columns:repeat(5,1fr)}
+@media (max-width:760px){.tracker.five{grid-template-columns:repeat(2,1fr)}}
+.note{font-size:14px;color:var(--muted);align-self:center}
+.roles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media (max-width:860px){.roles{grid-template-columns:1fr}}
+.roles div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;min-width:0}
+.roles b{display:block;font-family:var(--display);font-size:18px;margin-bottom:4px}
+.roles span{font-size:14.5px;color:var(--muted);line-height:1.45;display:block}
+.demo{margin:6px 0 18px;background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:16px}
+.demo img{display:block;width:100%;height:auto;max-width:760px;margin:0 auto}
+.demo figcaption{font-size:13px;color:var(--muted);text-align:center;margin-top:8px}
+ol.tight{margin:6px 0 0;padding-left:20px}ol.tight li{margin-bottom:4px}
+.privacy{margin-top:16px;border:1px solid var(--line);border-left:4px solid var(--navy);border-radius:12px;padding:16px 18px;background:var(--surface)}
+.privacy p{margin:6px 0}.privacy ul{margin:6px 0 0;padding-left:20px}.privacy li{margin-bottom:4px}
+.valid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media (max-width:860px){.valid{grid-template-columns:1fr}}
+.valid>div{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--blue-text);border-radius:12px;padding:14px 16px;min-width:0}
+.valid>div.now{border-top-color:var(--sweater)}
+.valid p{font-size:14.5px;margin:6px 0;color:var(--muted)}.valid b{color:var(--ink)}
+.linkish{background:none;border:0;padding:0;font:inherit;color:var(--blue-text);text-decoration:underline;cursor:pointer}
+.sumcard{font-size:15.5px;color:var(--muted);margin:0}\n.facts4.incase{margin:22px 0 4px;padding:18px 0 0;grid-template-columns:repeat(4,1fr);gap:14px 22px}\n.facts4.incase dd{font-size:15px;color:var(--ink)}\n@media (max-width:860px){.facts4.incase{grid-template-columns:1fr 1fr}}@media (max-width:520px){.facts4.incase{grid-template-columns:1fr}}\n
+.clist{display:flex;flex-direction:column;gap:22px}
+.crow{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr);background:var(--surface);border:1px solid var(--line);border-radius:22px;overflow:hidden;cursor:pointer;transition:transform .25s ease,box-shadow .25s ease;--c:#3F5F9E;--ct:#fff}
+.crow:hover{transform:translateY(-4px);box-shadow:0 22px 44px -26px rgba(27,42,71,.45)}
+.crow:nth-child(even) .cvis{order:2}
+.crow[data-case="case-app-treino"]{--c:#B3202E}
+.crow[data-case="case-abastecimento"]{--c:#2F62A8}
+.crow[data-case="case-agendamento"]{--c:#D4E5F7;--ct:#1B2A47}
+.crow[data-case="case-plm"]{--c:#1B2A47}
+.cvis{background:var(--c);color:var(--ct);padding:clamp(24px,4vw,44px);display:flex;flex-direction:column;justify-content:center;gap:10px;min-height:250px;position:relative;overflow:hidden}
+.cvis::after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;right:-90px;top:-90px;background:rgba(255,255,255,.12)}
+.cvis .cv-tag{font-family:var(--caps);font-weight:700;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;opacity:.85}
+.cvis strong{font-family:var(--display);font-weight:700;font-size:clamp(40px,5vw,60px);line-height:1}
+.cvis span:last-child{font-size:15.5px;opacity:.9;max-width:22em}
+.ctext{padding:clamp(22px,3.4vw,40px);display:flex;flex-direction:column;gap:12px;justify-content:center;min-width:0}
+.ctext .label{color:var(--blue-text);font-size:11px}
+.ctext h3{font-size:clamp(22px,2.4vw,28px);font-weight:700;line-height:1.2}
+.ctext p{color:var(--muted);font-size:16px;margin:0}
+.ctext .go{align-self:flex-start;background:none;border:1.5px solid var(--sweater);border-radius:999px;padding:11px 18px;font:700 15px/1 var(--body);color:var(--sweater);cursor:pointer;display:inline-flex;gap:8px;margin-top:6px}
+.ctext .go:hover{background:var(--sweater);color:#fff}
+@media (max-width:760px){.crow{grid-template-columns:1fr}.crow:nth-child(even) .cvis{order:0}.cvis{min-height:0}}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:24px;max-width:900px}
+.kpis div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;min-width:0}
+.kpis strong{display:block;font-family:var(--display);font-weight:700;font-size:clamp(24px,2.6vw,32px);line-height:1.05;color:var(--sweater)}
+.kpis span{display:block;font-size:14.5px;color:var(--muted);margin-top:6px;line-height:1.4}
+.case-hero .hero-actions{margin-top:20px}
+.parts{display:grid;grid-template-columns:repeat(4,1fr);gap:0 28px;border-top:1px solid var(--line)}
+.parts>div{padding-top:18px;min-width:0}
+.parts .label{color:var(--blue-text);display:block;font-size:11px;margin-bottom:8px}
+.parts p{margin:0;font-size:16.5px;line-height:1.5;color:var(--ink)}
+@media (max-width:900px){.parts{grid-template-columns:1fr 1fr;gap:18px 24px}}
+@media (max-width:520px){.parts{grid-template-columns:1fr}}
+.ba-bar{margin-top:34px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px 24px}
+.ba-bar .bars{margin:0;max-width:none}
+.ba{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:stretch;margin-top:34px}
+.ba>div{border:1px solid var(--line);border-radius:18px;padding:20px 22px;background:var(--surface);min-width:0}
+.ba>div.after{background:var(--band);border-color:transparent}
+.ba .label{display:block;font-size:11px;color:var(--muted);margin-bottom:8px}
+.ba .after .label{color:var(--sweater)}
+.ba p{margin:0;font-size:16.5px;color:var(--ink)}
+.ba i{align-self:center;font-style:normal;font-size:26px;color:var(--sweater)}
+@media (max-width:640px){.ba{grid-template-columns:1fr}.ba i{transform:rotate(90deg);justify-self:center}}
+.demo{margin-top:34px}
+.trail-wrap{margin-top:34px}
+.trail-btn{display:inline-flex;gap:10px;align-items:center;font:700 15px/1 var(--caps);letter-spacing:.12em;text-transform:uppercase;background:var(--navy);color:#fff;border:0;border-radius:999px;padding:16px 26px;cursor:pointer}
+.trail-btn[aria-expanded="true"] .arrow{transform:rotate(90deg)}
+.trail-btn .arrow{transition:transform .2s ease;display:inline-block}
+.trail{margin-top:24px;border-left:3px solid var(--band);padding-left:clamp(18px,3vw,32px);max-width:760px}
+.trail section{padding:0 0 22px;position:relative}
+.trail section::before{content:"";position:absolute;left:calc(-1 * clamp(18px,3vw,32px) - 8px);top:6px;width:13px;height:13px;border-radius:50%;background:var(--surface);border:3px solid var(--navy)}
+.trail h4{font-family:var(--caps);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue-text);margin:0 0 6px}
+.trail p,.trail li{font-size:16.5px;line-height:1.55;color:var(--ink);margin:0 0 6px}
+.trail ul{margin:0;padding-left:20px}
+
+.hero2{background:var(--bg)}
+.hero2::before{width:620px;height:620px;left:-220px;top:-160px;right:auto;opacity:.55}
+.hero2::after{display:none}
+.hero2 .wrap{grid-template-columns:minmax(0,.85fr) minmax(0,1.2fr);gap:clamp(32px,6vw,72px);padding-block:56px 64px}
+.hero2 .hero-copy{border-left:0;padding-left:0}
+.hero2 .hero .kicker,.hero2 .kicker{margin-top:0}
+.hero-visual{position:relative;min-width:0;padding-bottom:56px}
+.hv-card{background:var(--band);border-radius:28px;padding:22px 22px 0;overflow:hidden;position:relative}
+.hv-card::before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.45);right:-90px;top:-90px}
+.hv-card img{position:relative;display:block;width:100%;height:auto;aspect-ratio:4/4.6;object-fit:cover;object-position:center 15%;border-radius:20px 20px 0 0;filter:saturate(.9)}
+.hero2 .focos{position:absolute;left:clamp(-12px,-1vw,0px);bottom:0;margin:0;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:14px 16px;box-shadow:0 20px 40px -22px rgba(27,42,71,.45);display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.hero2 .focos .label{font-size:10.5px;color:var(--sweater)}
+.hero2 .foco{border:0;padding:0;background:none;font-size:15px}
+.hero2 .study{display:grid;align-items:stretch;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px;max-width:36em}
+.hero2 .study li{flex-direction:column;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px;align-items:flex-start}
+.hero2 .study li span{color:var(--ink);font-weight:500;line-height:1.35}
+@media (max-width:860px){.hero2 .wrap{grid-template-columns:1fr}.hero-visual{max-width:360px;margin:0 auto;width:100%}.hero2 .study{grid-template-columns:1fr}}
+
+.hero2 .wrap{grid-template-columns:minmax(0,1.5fr) minmax(0,.7fr)}
+.hero-visual{padding-bottom:0;display:flex;flex-direction:column;align-items:center;gap:0}
+.hv-round{display:block;width:100%;max-width:260px;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:center 15%;border-radius:50%;border:8px solid var(--surface);box-shadow:0 24px 50px -26px rgba(27,42,71,.5);background:var(--band)}
+.hero2 .focos{position:relative;left:auto;bottom:auto;margin-top:-26px}
+.about-grid{grid-template-columns:1fr 1.1fr}
+.portrait{max-width:520px}
+@media (max-width:860px){.hero-visual{order:-1;flex-direction:row;justify-content:center;gap:16px;max-width:none}.hv-round{max-width:150px;border-width:5px}.hero2 .focos{margin-top:0}}
+@media (max-width:860px){.hero2 .wrap{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr}}
+
+/* ===== v26 layout: compact home, one screen per section ===== */
+section.band{padding-block:64px}
+.sec-head{margin-bottom:22px}
+.sec-head h2{font-size:clamp(28px,3vw,38px)}
+.hero3{background:var(--bg)}
+.hero3::before{width:520px;height:520px;right:-160px;left:auto;top:-200px;opacity:.6}
+.hero3::after{width:280px;height:280px;left:-120px;bottom:-160px;opacity:.45}
+.hero3 .wrap{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,.75fr);gap:clamp(28px,5vw,64px);align-items:center;padding-block:44px 48px}
+.hero3 .hero-copy{border-left:4px solid var(--sweater);padding-left:clamp(18px,2.4vw,28px)}
+.hero3 .kicker{margin-top:0}
+.hero3 h1{font-size:clamp(32px,3.6vw,46px);margin:8px 0 14px;line-height:1.08}
+.hero3 .lede{font-size:17.5px;max-width:36em}
+.busco{margin:14px 0 0;font-size:17px;color:var(--ink)}
+.busco b{font-weight:700;color:var(--sweater)}
+.hero3 .hero-actions{margin-top:22px}
+.hero-side{display:flex;flex-direction:column;align-items:center;gap:18px;min-width:0}
+.hero3 .hv-round{max-width:210px}
+.hero3 .study{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;width:100%;max-width:300px}
+.hero3 .study li{display:flex;flex-direction:column;gap:2px;align-items:flex-start;padding:0 0 0 14px;border-left:3px solid var(--band);font-size:14px}
+.hero3 .study li span{color:var(--ink);line-height:1.35}
+@media (max-width:860px){.hero3 .wrap{grid-template-columns:1fr}.hero-side{order:-1;flex-direction:row;justify-content:flex-start}.hero3 .hv-round{max-width:120px;border-width:5px}}
+/* cases: compact 2x2 */
+.clist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.crow{grid-template-columns:minmax(0,.62fr) minmax(0,1fr);border-radius:20px;min-height:0}
+.crow:nth-child(even) .cvis{order:0}
+.cvis{min-height:0;padding:20px 20px;gap:6px;border-radius:0}
+.cvis::after{width:160px;height:160px;right:-60px;top:-60px}
+.cvis .cv-tag{font-size:10px;letter-spacing:.12em}
+.cvis strong{font-size:clamp(28px,2.8vw,38px)}
+.cvis span:last-child{font-size:13.5px;line-height:1.35}
+.ctext{padding:18px 20px;gap:6px;justify-content:flex-start}
+.ctext .label{font-size:10px}
+.ctext h3{font-size:clamp(17px,1.5vw,19px);line-height:1.25}
+.ctext p{font-size:14px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.ctext .go{padding:0;border:0;font-size:14px;margin-top:auto;padding-top:4px}
+.ctext .go:hover{background:none;color:var(--sweater);text-decoration:underline}
+.crow:nth-child(1){transform:rotate(-.4deg)}.crow:nth-child(4){transform:rotate(.35deg)}
+.crow:hover{transform:translateY(-3px) rotate(0)}
+@media (max-width:980px){.clist{grid-template-columns:1fr}}
+@media (max-width:560px){.crow{grid-template-columns:1fr}.crow:nth-child(1),.crow:nth-child(4){transform:none}}
+/* como */
+.flow{gap:6px;margin-bottom:12px}
+.flow button{padding:11px 14px;border-radius:12px}
+.flow button strong{font-size:16px}
+.flow-panel{padding:20px 22px;gap:22px;border-radius:18px}
+.flow-panel h3{font-size:22px;margin-bottom:6px}
+.flow-panel > div > p{font-size:15.5px}
+.where{gap:7px}
+.where button{padding:8px 12px}
+.where button span{font-size:14px;line-height:1.4}
+.tools{margin-top:14px}
+/* sobre */
+.about-one{max-width:1160px}
+.about-one .about-text{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,.8fr);gap:12px 48px;align-items:start}
+.about-one .about-text > .sec-head{grid-column:1/-1;margin-bottom:6px !important}
+.about-one .about-text > p{grid-column:1;margin:0 0 10px;font-size:16px;max-width:none}
+.about-one .facts{grid-column:2;grid-row:2 / span 3;grid-template-columns:1fr;margin:0;gap:12px}
+@media (max-width:860px){.about-one .about-text{grid-template-columns:1fr}.about-one .facts{grid-column:1;grid-row:auto}}
+.contact .wrap{padding-block:56px}
+.contact h2{font-size:clamp(30px,3.6vw,44px)}
+
+.crow:nth-child(1),.crow:nth-child(4){transform:none}
+.crow{grid-template-columns:minmax(0,.48fr) minmax(0,1fr)}
+.cvis{padding:18px 16px}
+.cvis strong{font-size:clamp(24px,2.4vw,32px)}
+.cvis .cv-tag{font-size:9.5px}
+.ctext{padding:16px 18px}
+.ctext p{display:block;-webkit-line-clamp:unset;overflow:visible;font-size:13.8px}
+.hero3 .study{align-items:stretch}
+.hero3 .study li{width:100%}
+#cases{padding-block:48px}
+
+/* v27: smaller type inside cases */
+.case-hero{padding-block:28px 32px}
+.case-hero h2{font-size:clamp(24px,2.8vw,34px);margin:8px 0 10px;padding-left:14px}
+.case-hero .sum{font-size:16px}
+.kpis{margin-top:18px;gap:10px}
+.kpis div{padding:12px 14px}
+.kpis strong{font-size:clamp(20px,2vw,25px)}
+.kpis span{font-size:13.5px}
+.case-main{padding-block:26px 56px}
+.parts p{font-size:14.5px}
+.parts .label{font-size:10px}
+.ba,.ba-bar,.demo,.trail-wrap{margin-top:24px}
+.ba p{font-size:14.5px}
+.ba>div{padding:16px 18px}
+.trail-btn{font-size:13px;padding:13px 22px}
+.trail h4{font-size:11px}
+.trail p,.trail li{font-size:15px}
+.trail section{padding-bottom:16px}
+.next-case{margin-top:32px}
+.next-case strong{font-size:15.5px}
+.demo figcaption{font-size:12.5px}
+.case-hero .hero-actions .btn{font-size:14px;padding:11px 18px}
+.note{font-size:13px}
+</style>
+
+<nav class="nav" aria-label="Principal">
+  <div class="wrap">
+    <a class="brand" href="#top"><i aria-hidden="true"></i>Bruna Ogata</a>
+    <ul>
+      <li><a href="#cases">Cases</a></li>
+      <li class="hide-sm"><a href="#como">Como trabalho</a></li>
+      <li class="hide-sm"><a href="#sobre">Sobre</a></li>
+      <li><button class="cv" type="button" data-open="curriculo">Currículo</button></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero hero3" id="top">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="label kicker">Bruna Ogata</span>
+      <h1>Descobrir o problema real. <span class="red">Construir a solução certa.</span></h1>
+      <p class="lede">Atuo há quase oito anos na interseção entre estratégia, planejamento, produto e operações, transformando dados e problemas de negócio em decisões, processos e resultados mensuráveis.</p>
+      <p class="busco">Busco oportunidades como <b>Product Manager</b>, <b>Product Owner</b> ou <b>Product Operations</b>.</p>
+      <div class="hero-actions">
+        <a class="btn btn-red" href="#cases">Ver os cases <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/bruna-ogata-105909128/" target="_blank" rel="noopener">LinkedIn</a>
+        <button class="btn btn-ghost" type="button" data-open="curriculo">Currículo</button>
+      </div>
+    </div>
+    <div class="hero-side">
+      <img class="hv-round" src="foto.jpg" alt="Bruna Ogata sorrindo, de óculos e suéter vermelho" width="1024" height="1536">
+      <ul class="study">
+        <li><b>Em curso</b><span>Pós-graduação em Digital Product Management · FIAP + PM3</span></li>
+        <li><b>MBA</b><span>Gestão de Projetos · USP</span></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="band" id="cases">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="label">Cases</span><h2>Meus principais cases</h2></div>
+    </div>
+    <div class="clist">
+      <article class="crow" data-case="case-app-treino">
+        <div class="cvis"><span class="cv-tag">Avaliação do atleta</span><strong>Web app publicado</strong><span>em teste no treino real</span></div>
+        <div class="ctext">
+          <span class="label">01 · Produto próprio · 0 → 1</span>
+          <h3>Um web app que transforma a avaliação física do treinador em dados comparáveis</h3>
+          <p>Do discovery ao web app publicado, com protótipo aprovado pelo treinador.</p>
+          <button class="go" data-open="case-app-treino">Ver o case <span class="arrow" aria-hidden="true">→</span></button>
+        </div>
+      </article>
+      <article class="crow" data-case="case-abastecimento">
+        <div class="cvis"><span class="cv-tag">Pontualidade das entregas</span><strong>80% → 92%</strong><span>com um MVP operacional, antes de qualquer automação</span></div>
+        <div class="ctext">
+          <span class="label">02 · Abastecimento · NK Store</span>
+          <h3>Discovery com 7 áreas e um MVP que levou a pontualidade de 80% para até 92%</h3>
+          <p>MVP antes da automação: cerca de R$ 6 mil/mês de economia em fretes e +50% de produtividade na Logística.</p>
+          <button class="go" data-open="case-abastecimento">Ver o case <span class="arrow" aria-hidden="true">→</span></button>
+        </div>
+      </article>
+      <article class="crow" data-case="case-agendamento">
+        <div class="cvis"><span class="cv-tag">Adoção da plataforma</span><strong>100%</strong><span>dos mais de 50 fornecedores e dos times internos</span></div>
+        <div class="ctext">
+          <span class="label">03 · Agendamento digital · NK Store</span>
+          <h3>Recebimento previsível e 100% de adoção com uma plataforma digital de agendamento</h3>
+          <p>Regras de negócio, adoção e corte do módulo sem valor. Previsibilidade no recebimento acima de 85%.</p>
+          <button class="go" data-open="case-agendamento">Ver o case <span class="arrow" aria-hidden="true">→</span></button>
+        </div>
+      </article>
+      <article class="crow" data-case="case-plm">
+        <div class="cvis"><span class="cv-tag">Cadastro de produto</span><strong>5 áreas</strong><span>com um único padrão</span></div>
+        <div class="ctext">
+          <span class="label">04 · PLM · NK Store</span>
+          <h3>Um padrão único de cadastro adotado por 5 áreas em um software de gestão de produto (PLM)</h3>
+          <p>Liderei a implantação com requisitos e papéis definidos: cadastro mais rápido e análises mais confiáveis.</p>
+          <button class="go" data-open="case-plm">Ver o case <span class="arrow" aria-hidden="true">→</span></button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="como">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="label">Como eu trabalho</span><h2>Meu ciclo de produto.</h2></div>
+      <p>Escolha uma etapa para ver o que eu faço e em quais cases isso aparece.</p>
+    </div>
+    <div class="flow" role="tablist" aria-label="Etapas">
+      <button role="tab" id="f0" aria-selected="true" aria-controls="flow-panel"><span class="label">01</span><strong>Discovery</strong></button>
+      <button role="tab" id="f1" aria-selected="false" aria-controls="flow-panel" tabindex="-1"><span class="label">02</span><strong>Roadmap e priorização</strong></button>
+      <button role="tab" id="f2" aria-selected="false" aria-controls="flow-panel" tabindex="-1"><span class="label">03</span><strong>MVP e delivery</strong></button>
+      <button role="tab" id="f3" aria-selected="false" aria-controls="flow-panel" tabindex="-1"><span class="label">04</span><strong>Adoção</strong></button>
+      <button role="tab" id="f4" aria-selected="false" aria-controls="flow-panel" tabindex="-1"><span class="label">05</span><strong>Mensuração e evolução</strong></button>
+    </div>
+    <div class="flow-panel" id="flow-panel" role="tabpanel"></div>
+    <div class="tools"><span class="label">Ferramentas</span><span class="chip">Miro</span><span class="chip">Notion</span><span class="chip">Power BI</span><span class="chip">SQL</span><span class="chip">Excel avançado</span><span class="chip">ERP Linx</span><span class="chip">Claude · IA generativa</span><span class="chip">Lovable</span></div>
+  </div>
+</section>
+
+<section class="band alt" id="sobre">
+  <div class="wrap about-one">
+    <div class="about-text">
+      <div class="sec-head" style="margin-bottom:22px"><div><span class="label">Sobre</span><h2>Quem é a Bruna</h2></div></div>
+      <p>Trabalho onde estratégia, dados e operação se encontram. Estruturei do zero as áreas de Planejamento Comercial e Abastecimento: conduzi o discovery de um problema de distribuição cruzando dados com entrevistas em sete áreas, defini o roadmap, implementei um MVP operacional e evoluí a solução com um backlog de melhorias. Com Tecnologia, construí bases de dados e dashboards para a tomada de decisão.</p>
+      <p>Também liderei a implantação e a adoção de dois produtos digitais de parceiros, um software de gerenciamento de produto (PLM) e uma plataforma de agendamento de entregas, do mapeamento de processos e dos requisitos ao treinamento de times internos e fornecedores, priorizando o backlog junto aos times de produto dos parceiros.</p>
+      <p>Hoje uso IA generativa para criar protótipos e plataformas digitais e automatizar processos, e construo um produto próprio: um web app de avaliação física, levado do discovery ao uso real. Também aprofundo meu repertório com a pós em Digital Product Management. Busco posições de Product Manager, Product Owner ou Product Operations em que estratégia, dados e operações gerem impacto direto no negócio.</p>
+      <div class="facts">
+        <div><span class="label">Hoje</span><strong>Gerente de Planejamento de Produto · Azzas 2154</strong></div>
+        <div><span class="label">Em formação</span><strong>Digital Product Management · FIAP + PM3</strong></div>
+        <div><span class="label">Formação</span><strong>MBA em Gestão de Projetos · USP</strong></div>
+        <div><span class="label">Trajetória completa</span><strong><button type="button" class="linkish" data-open="curriculo">No currículo</button> e no <a href="https://www.linkedin.com/in/bruna-ogata-105909128/" target="_blank" rel="noopener">LinkedIn</a></strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<section class="contact" id="contato">
+  <div class="wrap">
+    <div>
+      <h2>Vamos conversar?</h2>
+      <p>Procuro uma oportunidade como Product Manager, Product Owner ou Product Operations.</p>
+    </div>
+    <div class="contact-box">
+      <a href="https://www.linkedin.com/in/bruna-ogata-105909128/" target="_blank" rel="noopener">LinkedIn · bruna-ogata <span class="arrow" aria-hidden="true">→</span></a>
+      <button type="button" data-open="curriculo">Ver currículo <span class="arrow" aria-hidden="true">→</span></button>
+      <div class="copyrow"><span id="email">bruna.ogatadesousa@yahoo.com.br</span><button type="button" id="copy">Copiar e-mail</button></div>
+    </div>
+  </div>
+</section>
+<footer><div class="wrap"><span>Bruna Ogata de Sousa · Portfólio de produto</span><span>São Paulo · 2026</span></div></footer>
+
+<!-- ================= PAINEL ================= -->
+<div class="panel" id="panel" role="dialog" aria-modal="true" aria-labelledby="panel-title" hidden>
+  <div class="panel-bar"><div class="wrap"><button type="button" id="close">← Voltar</button><span class="where-t" id="panel-title">Case</span></div></div>
+
+  <article class="case" id="case-app-treino" data-title="Case 01 · Produto próprio" hidden>
+    <div class="case-hero"><div class="wrap">
+      <span class="label">Case 01 · Produto próprio · 0 → 1</span>
+      <h2>Um web app que transforma a avaliação física do treinador em dados comparáveis</h2>
+      <p class="sum">Levei um produto próprio do discovery ao uso real: um web app mobile em que o treinador registra a avaliação durante o treino e acompanha a evolução do aluno em números.</p>
+      <div class="kpis">
+        <div><strong>Web app publicado</strong><span>em teste no treino real</span></div>
+        <div><strong>Protótipo aprovado</strong><span>"fácil, intuitivo e informativo", segundo o treinador</span></div>
+        <div><strong>100%</strong><span>das avaliações pelo app: meta do piloto</span></div>
+      </div>
+      <div class="hero-actions"><a class="btn btn-red" href="https://atleta-assessment-studio.lovable.app" target="_blank" rel="noopener">Abrir o web app <span class="arrow" aria-hidden="true">→</span></a><span class="note">Acesso com login do treinador</span></div>
+    </div></div>
+    <div class="wrap case-main">
+      <div class="parts">
+        <div><span class="label">Problema</span><p>A avaliação física era feita só no olho, sem registro para comparar a evolução, e o engajamento dos alunos online era baixo.</p></div>
+        <div><span class="label">Meu papel</span><p>Discovery, definição do escopo, requisitos, priorização, testes e evolução do produto.</p></div>
+        <div><span class="label">Decisão principal</span><p>Priorizar uma experiência simples para o treinador: um fluxo mobile e guiado para o meio do treino, em vez de uma ferramenta difícil de usar.</p></div>
+        <div><span class="label">Estágio atual</span><p>Web app publicado e em teste no treino real. Próximo passo: feedback para ver se as metas do piloto foram alcançadas.</p></div>
+      </div>
+      <figure class="demo"><img src="app-demo.jpg" alt="Telas do web app com dados de exemplo: login do treinador, registro de força com nível calculado, radar de capacidades na reavaliação e relatório em PDF para o aluno" width="1100" height="982" loading="lazy"><figcaption>Login do treinador, registro no treino, evolução na reavaliação e relatório em PDF para o aluno no WhatsApp. Dados de exemplo.<br><b>Privacidade desde o MVP:</b> consentimento registrado na avaliação, só treinador e aluno veem os dados, exclusão do aluno da lista pelo treinador e dados mínimos (nome, idade, sexo e peso).</figcaption></figure>
+      <div class="trail-wrap">
+        <button type="button" class="trail-btn" aria-expanded="false" aria-controls="t-app">Ler a trilha de decisões <span class="arrow" aria-hidden="true">→</span></button>
+        <div class="trail" id="t-app" hidden>
+          <section><h4>Problema</h4><p>Avaliações pouco comparáveis e registro inviável no celular. O treinador tinha o conhecimento técnico, mas a percepção dele durante o treino não virava dado. O engajamento dos alunos online também era baixo. Nossa hipótese é que os dois estão ligados: sem números, o aluno não enxerga a própria evolução.</p></section>
+          <section><h4>Evidências do discovery</h4><ul><li>A avaliação acontece durante o treino, enquanto o aluno executa os exercícios.</li><li>Só cerca de 35% dos alunos ativos no aplicativo de treino online treinavam de fato.</li><li>O treinador já tinha testado vários aplicativos e nenhum trazia as métricas de que ele precisa.</li><li>Criei uma planilha de Excel para o treinador. Ela gerava números, mas era rígida no meio do treino e exigia domínio da ferramenta.</li></ul></section>
+          <section><h4>Hipótese</h4><p>Se o registro for mobile e guiado, o treinador vai avaliar todos os alunos pelo app. Saberemos que funcionou quando 100% das avaliações do piloto forem feitas no app.</p><p>Hipótese de valor: com a evolução em números, mais alunos seguem treinando. Vamos medir quantos alunos avaliados no app continuam treinando de fato depois da avaliação.</p></section>
+          <section><h4>Decisão</h4><p>Manter o cálculo de nível por capacidade e redesenhar a experiência para o celular. A reavaliação com comparativo entrou no MVP, porque sem ela não dá para validar a hipótese. Sugestão de treino por IA ficou fora: a personalização do treinador é o diferencial dele.</p></section>
+          <section><h4>Execução</h4><ul><li>Protótipo navegável feito no Claude e testado com o treinador antes de desenvolver.</li><li>Métricas e faixas de nível definidas com o treinador, com base em referências acadêmicas.</li><li>MVP desenvolvido com IA no Lovable.</li><li><b>Privacidade desde o MVP:</b> dados mínimos (nome, idade, sexo e peso), só treinador e aluno veem os dados, consentimento registrado e exclusão do aluno da lista pelo treinador. Antes de ampliar o uso, revisão especializada.</li></ul></section>
+          <section><h4>Métricas do piloto</h4><ul><li><b>Facilidade de uso:</b> 100% das avaliações feitas pelo app, sem interromper o treino.</li><li><b>Avaliação em números:</b> 100% dos alunos ativos avaliados em 90 dias.</li><li><b>Avaliação completa:</b> todas as capacidades definidas pelo treinador.</li><li><b>Evolução:</b> alunos reavaliados com comparativo, com meta definida pelo treinador.</li><li><b>Engajamento:</b> alunos avaliados que seguem treinando de fato depois da avaliação, comparado com a base de cerca de 35%. Esse dado vem do levantamento do treinador, fora do app.</li></ul></section>
+          <section><h4>Aprendizado</h4><p>A ferramenta concorre com o hábito de avaliar no olho, não com outro app. Para ser adotada, precisa ser tão fácil quanto observar.</p></section>
+        </div>
+      </div>
+      <div class="next-case"></div>
+    </div>
+  </article>
+
+  <article class="case" id="case-abastecimento" data-title="Case 02 · Abastecimento" hidden>
+    <div class="case-hero"><div class="wrap">
+      <span class="label">Case 02 · Abastecimento · NK Store · Jan 2024 – Abr 2025</span>
+      <h2>Discovery com 7 áreas e um MVP que levou a pontualidade de 80% para até 92%</h2>
+      <p class="sum">Liderei o discovery com dados e entrevistas, defini o roadmap a partir do diagnóstico e decidi estabilizar o processo com um MVP antes de investir em automação.</p>
+      <div class="kpis">
+        <div><strong>80% → 92%</strong><span>de pontualidade nas entregas</span></div>
+        <div><strong>~R$ 6 mil/mês</strong><span>de economia em fretes não programados</span></div>
+        <div><strong>+50%</strong><span>de produtividade da Logística</span></div>
+      </div>
+    </div></div>
+    <div class="wrap case-main">
+      <div class="parts">
+        <div><span class="label">Problema</span><p>Dois problemas se somavam: entregas atrasadas, cobertas com frete emergencial, e conflito entre os canais, que dividiam um estoque único sem regra de prioridade.</p></div>
+        <div><span class="label">Meu papel</span><p>Liderei a iniciativa do discovery à implementação, com 7 áreas envolvidas.</p></div>
+        <div><span class="label">Decisão principal</span><p>Estabilizar o processo com um MVP operacional antes de automatizar, para validar as regras antes de investir em tecnologia.</p></div>
+        <div><span class="label">Resultado</span><p>Pontualidade de 80% para até 92%, menos frete não programado e a Logística focada em executar.</p></div>
+      </div>
+      <div class="ba-bar">
+        <div class="bars"><div class="bar"><div class="row"><span>Pontualidade das entregas</span><span>80% → até 92%</span></div><div class="track"><i class="b" data-w="80"></i><i class="a" data-w="92"></i></div></div>
+        <div class="legend"><span><b style="background:var(--studio-deep)"></b>Antes</span><span><b style="background:var(--sweater)"></b>Depois</span></div></div>
+      </div>
+      <div class="trail-wrap">
+        <button type="button" class="trail-btn" aria-expanded="false" aria-controls="t-abs">Ler a trilha de decisões <span class="arrow" aria-hidden="true">→</span></button>
+        <div class="trail" id="t-abs" hidden>
+          <section><h4>Discovery</h4><ul><li>3 anos de histórico de entregas, vendas, estoque, ruptura e frete.</li><li>2 workshops e entrevistas individuais com as 7 áreas envolvidas na operação.</li><li>Lojas, e-commerce e atacado usavam um estoque único, sem regra de quem recebe primeiro, o que gerava conflito entre os canais.</li></ul></section>
+          <section><h4>Roadmap</h4><p>Com o diagnóstico, apresentei à Diretoria o business case que aprovou o piloto. Roadmap em duas fases: MVP e implementação, depois automação.</p></section>
+          <section><h4>MVP</h4><p>O Planejamento passou a decidir a distribuição, a Logística ficou com a execução e os canais ganharam regras de prioridade. A solução evoluiu com o feedback dos usuários e com o acompanhamento de indicadores.</p><p><b>Trade-offs:</b> as premissas operacionais do MVP trouxeram previsibilidade, mas reduziram a flexibilidade para pedidos de última hora. Já a automação ficou para uma fase seguinte: validar a operação antes evitou retrabalho e custo para o time de Tecnologia, com mais trabalho manual só até o processo se estabilizar.</p></section>
+          <section><h4>Mensuração</h4><p>Indicadores comparados com o histórico ao longo de 3 ciclos: pontualidade, frete não programado e produtividade da Logística.</p></section>
+          <section><h4>Evolução</h4><p>Com a operação validada, começou a fase de automação com o time de Tecnologia. Como o processo já estava medido, o escopo partiu dos dados: 2h30 por dia de trabalho manual que podem ser eliminadas.</p></section>
+          <section><h4>Aprendizado</h4><p>Dados mostram o tamanho do problema; as conversas com as áreas mostram a causa. Automatizar um fluxo sem regras só acelera o erro.</p></section>
+        </div>
+      </div>
+      <div class="next-case"></div>
+    </div>
+  </article>
+
+  <article class="case" id="case-agendamento" data-title="Case 03 · Agendamento digital" hidden>
+    <div class="case-hero"><div class="wrap">
+      <span class="label">Case 03 · Agendamento digital · NK Store · 2023 – 2024</span>
+      <h2>Recebimento previsível e 100% de adoção com uma plataforma digital de agendamento</h2>
+      <p class="sum">Como responsável pelo produto no lado da empresa, defini as regras de negócio de uma plataforma de agendamento de entregas de um parceiro, levei mais de 50 fornecedores e os times internos a usá-la e cortei o módulo que não gerava valor.</p>
+      <div class="kpis">
+        <div><strong>100%</strong><span>de adoção pelos mais de 50 fornecedores e pelos times internos</span></div>
+        <div><strong>&gt; 85%</strong><span>de previsibilidade no recebimento</span></div>
+        <div><strong>0</strong><span>notas com erro na chegada</span></div>
+      </div>
+    </div></div>
+    <div class="wrap case-main">
+      <div class="parts">
+        <div><span class="label">Problema</span><p>Entregas combinadas por e-mail e WhatsApp, recebimento sem planejamento e notas fiscais com erro descobertas na porta.</p></div>
+        <div><span class="label">Meu papel</span><p>Regras de negócio, testes de aceitação, priorização com o parceiro e adoção pelos fornecedores e times internos.</p></div>
+        <div><span class="label">Decisão principal</span><p>Com base no feedback dos usuários, cortar o módulo de follow-up, que não gerava valor, e concentrar o produto no agendamento.</p></div>
+        <div><span class="label">Resultado</span><p>100% de adoção por fornecedores e times internos, previsibilidade acima de 85% e erros de nota corrigidos antes da entrega.</p></div>
+      </div>
+      <div class="ba">
+        <div><span class="label">Antes</span><p>Entrega combinada por e-mail e WhatsApp, nota conferida com a mercadoria na porta.</p></div>
+        <i aria-hidden="true">→</i>
+        <div class="after"><span class="label">Depois</span><p>Fornecedor agenda na plataforma, com a nota conferida contra o pedido antes da entrega.</p></div>
+      </div>
+      <div class="trail-wrap">
+        <button type="button" class="trail-btn" aria-expanded="false" aria-controls="t-age">Ler a trilha de decisões <span class="arrow" aria-hidden="true">→</span></button>
+        <div class="trail" id="t-age" hidden>
+          <section><h4>Problema</h4><p>A Logística não sabia quanto ia receber no dia, e notas fiscais com erro geravam retrabalho no Fiscal.</p></section>
+          <section><h4>Decisão de regra</h4><p>Transferi para o fornecedor a conferência da nota e o agendamento: a entrega só é marcada quando a nota bate com o pedido. O time interno deixou de conferir e corrigir notas, o fornecedor ganhou controle sobre as próprias entregas e a comunicação passou a ficar em um só lugar. Ganharam a empresa e os fornecedores.</p></section>
+          <section><h4>Decisão de escopo</h4><p>O follow-up, módulo extra para gerir as entregas, era difícil de operar e não gerava ganho. Decidi com a diretoria cortá-lo e manter esse acompanhamento no Excel e no ERP, que já funcionavam.</p></section>
+          <section><h4>Execução</h4><ul><li>Regras definidas com o time de produto do parceiro.</li><li>Testes de aceitação e priorização de melhorias.</li><li>Nova rotina, materiais de apoio e treinamento dos fornecedores para usar a plataforma.</li></ul></section>
+          <section><h4>Resultado</h4><ul><li>100% de adoção pelos mais de 50 fornecedores e pelos times internos.</li><li>Previsibilidade no recebimento acima de 85%.</li><li>Erros de nota corrigidos no agendamento, antes da chegada.</li></ul></section>
+          <section><h4>Aprendizado</h4><p>Quando um processo passa para o fornecedor, ele só adota se enxergar o próprio ganho. Isso exige conversa e prova de valor, não só treinamento.</p></section>
+        </div>
+      </div>
+      <div class="next-case"></div>
+    </div>
+  </article>
+
+  <article class="case" id="case-plm" data-title="Case 04 · Gestão de produto (PLM)" hidden>
+    <div class="case-hero"><div class="wrap">
+      <span class="label">Case 04 · PLM · NK Store · Fim de 2024 – fim de 2025</span>
+      <h2>Um padrão único de cadastro adotado por 5 áreas em um software de gestão de produto (PLM)</h2>
+      <p class="sum">Liderei a implantação, da escolha do parceiro à adoção pelas áreas, com a Product Manager do fornecedor.</p>
+      <div class="kpis">
+        <div><strong>5 áreas</strong><span>com um único padrão de cadastro</span></div>
+        <div><strong>1 só lugar</strong><span>cadastro no software, integrado ao ERP</span></div>
+      </div>
+    </div></div>
+    <div class="wrap case-main">
+      <div class="parts">
+        <div><span class="label">Problema</span><p>Cadastro de produto em Excel, papel e ERP, sem padrão, o que travava a exportação de dados e as análises.</p></div>
+        <div><span class="label">Meu papel</span><p>Liderei a implantação: escolha do parceiro, requisitos, priorização, treinamento e adoção pelas áreas.</p></div>
+        <div><span class="label">Decisão principal</span><p>Começar pelo que destrava todas as áreas, cadastro padronizado e papéis definidos, e implantar o restante em fases, priorizado no backlog com a PM do parceiro.</p></div>
+        <div><span class="label">Resultado</span><p>Cadastro padronizado e mais rápido, feito só no software, que integra direto com o ERP. Responsáveis definidos e análises mais confiáveis.</p></div>
+      </div>
+      <div class="ba">
+        <div><span class="label">Antes</span><p>Excel, papel e ERP, cada área com seu jeito de cadastrar.</p></div>
+        <i aria-hidden="true">→</i>
+        <div class="after"><span class="label">Depois</span><p>Uma plataforma com um padrão por tipo de produto e responsáveis definidos.</p></div>
+      </div>
+      <div class="trail-wrap">
+        <button type="button" class="trail-btn" aria-expanded="false" aria-controls="t-plm">Ler a trilha de decisões <span class="arrow" aria-hidden="true">→</span></button>
+        <div class="trail" id="t-plm" hidden>
+          <section><h4>Problema</h4><ul><li>Não havia padrão de cadastro nem responsáveis definidos.</li><li>Informação em papel não dava segurança sobre os dados.</li><li>Cadastrar no ERP gerava retrabalho: depois de cadastrado, o produto não podia mais ter os atributos alterados.</li><li>Sem dado confiável, as análises ficavam travadas.</li></ul></section>
+          <section><h4>Escolha do parceiro</h4><p>Quatro critérios: estrutura da plataforma, informações de produto cobertas, integração com o ERP e facilidade de uso.</p></section>
+          <section><h4>Decisão</h4><p>A partir do levantamento de todos os cadastros, defini o padrão de cada tipo de produto e os papéis de cada time: quem cadastra, quem controla e quem integra com o ERP.</p></section>
+          <section><h4>Execução</h4><ul><li>Treinamento das áreas usuárias.</li><li>Valor do dado padronizado mostrado a cada área.</li><li>Plano de implantação com a PM do parceiro: o que entrava agora e o que ficava para depois.</li><li>Backlog de funcionalidades, correções e melhorias priorizado a partir do feedback.</li></ul></section>
+          <section><h4>Resultado</h4><ul><li>Cadastro padronizado por tipo de produto.</li><li>Cadastro mais rápido: feito só no software, onde os atributos podem ser ajustados, e integrado ao ERP quando os dados estão corretos.</li><li>Exportação de dados mais simples e análises mais rápidas e confiáveis.</li><li>Gestão entre áreas mais simples, com responsabilidades claras.</li></ul></section>
+          <section><h4>Aprendizado</h4><p>Sem mostrar o valor do produto para quem vai usá-lo, não existe adoção, por melhor que seja a plataforma.</p></section>
+        </div>
+      </div>
+      <div class="next-case"></div>
+    </div>
+  </article>
+
+  <article class="case" id="curriculo" data-title="Currículo" hidden>
+    <div class="case-hero"><div class="wrap">
+      <span class="label">Currículo</span>
+      <h2>Bruna Ogata de Sousa</h2>
+      <p class="sum">Product Manager · Estratégia, dados e operações · São Paulo, SP</p>
+      <div class="cv-dl"><a class="btn btn-red" href="Curriculo_Bruna_Ogata_Product_Manager.pdf" download="Curriculo_Bruna_Ogata_Product_Manager.pdf">Baixar PDF</a></div>
+    </div></div>
+    <div class="wrap cv-grid">
+      <aside class="cv-side">
+        <div class="box"><span class="label">Contato</span><p>bruna.ogatadesousa@yahoo.com.br</p><p style="margin-top:6px"><a href="https://www.linkedin.com/in/bruna-ogata-105909128/" target="_blank" rel="noopener">linkedin.com/in/bruna-ogata</a></p></div>
+        <div class="box"><span class="label">Competências-chave</span><ul><li>Product Discovery e definição de problemas</li><li>Priorização de oportunidades, roadmap e backlog</li><li>Definição de requisitos e regras de negócio</li><li>Experimentação e MVPs operacionais</li><li>Dados, indicadores e dashboards para decisão</li><li>Gestão de stakeholders multidisciplinares</li><li>IA generativa para protótipos, plataformas digitais e automação de processos</li></ul></div>
+        <div class="box"><span class="label">Ferramentas</span><ul><li>Excel avançado</li><li>Power BI</li><li>SQL (básico)</li><li>ERP Linx</li><li>Miro</li><li>Notion</li><li>Claude (IA generativa para protótipos, plataformas digitais, análise e automação de processos)</li><li>Lovable</li></ul></div>
+        <div class="box"><span class="label">Idiomas</span><p>Inglês intermediário-avançado (B2)</p></div>
+        <div class="box"><span class="label">Formação</span><ul><li>Digital Product Management · Pós-graduação FIAP em parceria com a PM3 · 2026–2027</li><li>MBA em Gestão de Projetos · USP · 2023–2025</li><li>Gestão Estratégica de Negócios da Moda · Pós-graduação Senac · 2022</li><li>Bacharelado em Design de Moda · Universidade Anhembi Morumbi · 2017–2020</li><li>Técnico em Administração · Colégio Anchieta · 2013–2015</li></ul></div>
+      </aside>
+      <div>
+        <div class="cv-job" style="border-top:0;padding-top:0"><span class="when">Resumo profissional</span><p style="color:var(--muted);margin-top:8px">Profissional sênior com quase 8 anos de experiência em estratégia de produto, dados e operações. Estruturei duas áreas do zero, conduzi discoveries com dados e entrevistas envolvendo até sete áreas, implementei MVPs operacionais e liderei a implantação e a adoção de soluções digitais. Uso IA generativa para criar protótipos e plataformas digitais e automatizar processos, e desenvolvo um produto próprio, um web app de avaliação física já publicado e em teste no treino real. Visão de negócio, capacidade analítica e articulação entre áreas, com resultados em eficiência, produtividade e rentabilidade.</p></div>
+        <div class="cv-job"><span class="when">Fev 2026 – atual</span><h4>Gerente de Planejamento de Produto · Azzas 2154 | Cris Barros</h4><ul>
+          <li>Lidero o planejamento estratégico do portfólio com cerca de 650 SKUs, distribuído entre 13 lojas, e-commerce e atacado, integrando dados de mercado, performance e KPIs de planejado versus realizado para recomendar ajustes de categoria, canal e orçamento às diretorias Comercial e de Operações.</li>
+          <li>Respondo por decisões de precificação e markup, mantendo o indicador consistentemente 10% acima da meta definida pela diretoria e contribuindo para a rentabilidade sem perder competitividade.</li>
+          <li>Orquestro decisões de portfólio com Criação, Comercial, Supply e Operações, direcionando o orçamento de compras (Open-to-Buy) e o ciclo de vida dos produtos.</li>
+          <li>Coordeno o cronograma de lançamento das coleções com Criação, Comercial, Supply e Operações, acompanhando marcos, dependências, responsáveis e entregas.</li>
+          <li>Conduzi o discovery com 4 áreas internas e identifiquei que, sem dados históricos consolidados para apoio nas decisões, a liberação do portfólio se estendia por várias rodadas. Construí com IA generativa (Claude) uma plataforma digital que reúne esses dados em um só lugar, para decisões de liberação e negociação mais rápidas e confiáveis. Em piloto em uma categoria, com meta de reduzir pela metade o tempo de liberação e expansão prevista para 11 categorias.</li>
+          <li>Identifiquei um fluxo de alto esforço manual e desenvolvi uma solução com IA generativa (Claude), incluindo agentes simples, para automatizar apresentações executivas e cronogramas, conduzindo testes, implementação e adoção pelo time, e reduzindo em até 75% o tempo dessas tarefas.</li></ul></div>
+        <div class="cv-job"><span class="when">Set 2022 – Jan 2026</span><h4>Coordenadora de Planejamento Comercial e Abastecimento · NK Store</h4><ul>
+          <li>Estruturei do zero as áreas de Planejamento Comercial e Abastecimento, definindo processos, dados, rotinas, ritos de governança (fechamento mensal e acompanhamento de metas por mês e canal) e indicadores, com business reviews periódicos com as diretorias.</li>
+          <li>Conduzi o discovery de um problema crítico de abastecimento, combinando 3 anos de dados do ERP com workshops e entrevistas envolvendo 7 áreas. Com base no diagnóstico, estruturei o roadmap da iniciativa até a implementação, apresentei à Diretoria o business case que aprovou o piloto, desenhei e implementei um MVP operacional de distribuição por canal e priorizei o backlog de melhorias a partir do feedback dos usuários internos. A iniciativa elevou a pontualidade das entregas de 80% para até 92%, reduziu em cerca de R$ 6 mil por mês os custos com fretes não programados e aumentou em 50% a produtividade da Logística.</li>
+          <li>Liderei a implantação de um software de gerenciamento de produto (PLM) fornecido por parceiro com gestão da mudança: participei da escolha do fornecedor, mapeei processos, defini requisitos, conduzi treinamentos e apoiei a adoção pelas áreas usuárias. Atuei com a Product Manager do fornecedor na construção e priorização do backlog de funcionalidades, correções e melhorias, padronizando cadastros, reduzindo retrabalho e aumentando a confiabilidade dos dados comerciais.</li>
+          <li>Liderei a implantação de uma plataforma digital de agendamento de entregas fornecida por parceiro (Pitágoras), com impacto nos processos de recebimento e na área fiscal: estruturei a nova rotina, os materiais de apoio e o treinamento dos fornecedores externos, colaborei com o time de produto do fornecedor na priorização de melhorias e participei dos testes de aceitação. A adoção aumentou a previsibilidade das entregas, padronizou o recebimento de notas fiscais e otimizou o processo da área fiscal.</li>
+          <li>Em parceria com Tecnologia, traduzi necessidades do negócio em requisitos e conduzi a construção de uma base de dados e dashboards para planejamento e abastecimento, apoiando decisões das áreas envolvidas.</li>
+          <li>Desenvolvi e testei com dados reais um modelo de Open-to-Buy para marca própria e curadoria nos canais de varejo, e-commerce e atacado, adotado também pelo Financeiro. O markup evoluiu de 6,5 para 7,0, o sell through passou de 50–55% para 55–60% e a cobertura de estoque caiu de mais de cinco meses para 4–4,5 meses.</li></ul></div>
+        <div class="cv-job"><span class="when">Fev 2021 – Set 2022</span><h4>Analista de Planejamento Comercial Pleno e Sênior · Veste S/A | John John</h4><ul>
+          <li>Construí um modelo de planejamento orçamentário para decisões de compra em mais de 50 lojas e no atacado, cruzando histórico de vendas, rentabilidade e estoque para orientar a alocação de investimentos.</li>
+          <li>Transformei análises de demanda, vendas, estoque e recebimento em recomendações de compra e produção apresentadas à gerência e à diretoria, coordenando decisões entre Planejamento, Produção e Comercial.</li></ul></div>
+        <div class="cv-job"><span class="when">Out 2018 – Jan 2021</span><h4>Analista de Planejamento de Produto e Compras · Cavalera</h4><ul>
+          <li>Trajetória: Estágio de Produto → Assistente de Produto → Assistente de PCP → Analista.</li>
+          <li>Evoluí de estágio a analista em pouco mais de dois anos, passando por Produto, PCP e Planejamento de Compras, com atuação direta em produção, compras e análise de vendas.</li></ul></div>
+        <div class="cv-job"><span class="when">Produto próprio</span><h4>Product Manager · App de avaliação do atleta (web app mobile)</h4><ul>
+          <li>Conduzi o discovery com um preparador físico de atletas e identifiquei que a avaliação era feita só pela observação: sem registros mensuráveis, o aluno não conseguia acompanhar a própria evolução, e o engajamento dos alunos online era baixo (só cerca de 35% dos alunos ativos treinavam de fato).</li>
+          <li>Para tornar essa evolução visível, criei uma planilha de Excel que calculava o nível do aluno em cada capacidade física. Ela gerava os números, mas era difícil de usar no meio do treino; por isso mantive o cálculo e troquei a experiência por um web app mobile e guiado.</li>
+          <li>Defini escopo, requisitos e métricas de avaliação com o treinador, validei um protótipo navegável feito no Claude e desenvolvi o MVP com IA no Lovable, com privacidade tratada desde o MVP.</li>
+          <li>Em teste no treino real, com metas definidas: 100% das avaliações feitas pelo app, 100% dos alunos ativos avaliados em 90 dias e acompanhamento de quantos alunos avaliados seguem treinando.</li></ul></div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var FLOW=[
+    {t:'Discovery',d:'Começo pelo problema, não pela solução. Cruzo dados históricos com conversas com quem vive o processo.',w:[
+      ['case-app-treino','Produto próprio','Entrevista e jornada do treinador para entender por que a planilha não funcionava no treino.'],
+      ['case-abastecimento','Abastecimento','3 anos de dados, workshops e entrevistas com 7 áreas.'],
+      ['case-agendamento','Agendamento digital','Por que as entregas combinadas por e-mail e WhatsApp não eram cumpridas.'],
+      ['case-plm','Gestão de produto (PLM)','Mapeamento de 5 áreas e critérios para escolher a plataforma.']]},
+    {t:'Roadmap e priorização',d:'Com o diagnóstico em mãos, transformo o problema em escolhas explícitas: o que entra, o que sai e do que abrimos mão.',w:[
+      ['case-abastecimento','Abastecimento','Roadmap em duas fases: estabilizar com um MVP antes de automatizar.'],
+      ['case-agendamento','Agendamento digital','Descontinuar o módulo de follow-up, que não gerava valor, e focar no agendamento.'],
+      ['case-app-treino','Produto próprio','Matriz impacto × esforço e reavaliação dentro do MVP para validar a hipótese.'],
+      ['case-plm','Gestão de produto (PLM)','O que entra na plataforma na implantação e o que fica para depois.']]},
+    {t:'MVP e delivery',d:'Valido com usuários reais antes de investir mais, e acompanho a entrega de perto.',w:[
+      ['case-app-treino','Produto próprio','Planilha, protótipo navegável e MVP funcional, cada um testado com o treinador.'],
+      ['case-abastecimento','Abastecimento','MVP operacional validado na operação real antes de qualquer sistema.'],
+      ['case-agendamento','Agendamento digital','Regras de negócio e testes de aceitação com o parceiro.']]},
+    {t:'Adoção',d:'Produto só gera resultado quando é usado. Mostro o valor para cada usuário e trato o treinamento como parte da experiência.',w:[
+      ['case-agendamento','Agendamento digital','Mais de 50 fornecedores treinados para usar a plataforma, 100% de adoção.'],
+      ['case-plm','Gestão de produto (PLM)','Treinamento das áreas e valor do dado padronizado para cada uma.'],
+      ['case-abastecimento','Abastecimento','MVP implementado e testado ao mesmo tempo, junto com os times.'],
+      ['case-app-treino','Produto próprio','Experiência pensada para o meio do treino, onde a planilha falhou.']]},
+    {t:'Mensuração e evolução',d:'Defino como medir desde o início e uso os números e o feedback para decidir o próximo incremento.',w:[
+      ['case-abastecimento','Abastecimento','Pontualidade de 80% para até 92%, economia em fretes e automação com escopo medido.'],
+      ['case-agendamento','Agendamento digital','Previsibilidade no recebimento acima de 85%.'],
+      ['case-app-treino','Produto próprio','Metas de piloto que vão orientar os próximos incrementos.']]}
+  ];
+  var fp=document.getElementById('flow-panel'),fb=[].slice.call(document.querySelectorAll('.flow button'));
+  function showFlow(i){
+    fb.forEach(function(b,j){b.setAttribute('aria-selected',j===i);b.tabIndex=j===i?0:-1});
+    var f=FLOW[i];fp.setAttribute('aria-labelledby','f'+i);
+    fp.innerHTML='<div><h3>'+esc(f.t)+'</h3><p>'+esc(f.d)+'</p></div><div class="where"><span class="label">Onde aparece</span>'+f.w.map(function(x){return '<button type="button" data-open="'+x[0]+'"><b>'+esc(x[1])+'</b><span>'+esc(x[2])+' →</span></button>'}).join('')+'</div>';
+    fp.style.animation='none';void fp.offsetHeight;fp.style.animation='';
+  }
+  fb.forEach(function(b,i){b.onclick=function(){showFlow(i)};b.onkeydown=function(e){var k=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(k){var n=(i+k+fb.length)%fb.length;fb[n].focus();showFlow(n)}}});
+  showFlow(0);
+
+
+  /* matriz impacto x esforço */
+  [].forEach.call(document.querySelectorAll('.mx'),function(mx){
+    var why=mx.parentNode.querySelector('.mx-why');
+    var items=[].slice.call(mx.querySelectorAll('.mi'));
+    function pick(b){items.forEach(function(x){x.setAttribute('aria-pressed',x===b)});why.querySelector('strong').textContent=b.textContent;why.querySelector('p').textContent=b.dataset.r;}
+    items.forEach(function(b){b.type='button';b.setAttribute('aria-pressed','false');b.onclick=function(e){e.stopPropagation();pick(b)}});
+    var first=mx.querySelector('.q2 .mi');if(first)pick(first);
+  });
+
+
+  [].forEach.call(document.querySelectorAll('.trail-btn'),function(b){
+    var t=document.getElementById(b.getAttribute('aria-controls'));
+    b.onclick=function(){var o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',!o);t.hidden=o;b.firstChild.textContent=o?'Ler a trilha de decisões ':'Fechar a trilha ';if(!o)t.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'})};
+  });
+  var cp=document.getElementById('copy');
+  cp.onclick=function(){var el=document.getElementById('email');
+    function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);cp.textContent='Selecionado'}
+    try{navigator.clipboard.writeText(el.textContent).then(function(){cp.textContent='Copiado!';setTimeout(function(){cp.textContent='Copiar e-mail'},1800)},sel)}catch(e){sel()}};
+
+  var panel=document.getElementById('panel'),title=document.getElementById('panel-title');
+  var arts=[].slice.call(document.querySelectorAll('article.case'));
+  var ids=arts.map(function(a){return a.id});
+  var cases=arts.filter(function(a){return a.id.indexOf('case-')===0});
+  var current=null,lastFocus=null;
+
+  function animateBars(scope){var b=scope.querySelectorAll('.track i,.rt i');if(!b.length)return;[].forEach.call(b,function(i){i.style.width='0'});setTimeout(function(){[].forEach.call(b,function(i){i.style.width=i.dataset.w+'%'})},250)}
+
+  cases.forEach(function(c,ci){
+    var j=c.querySelector('.journey');
+    if(j){
+      var stages=[].slice.call(j.querySelectorAll('.stage'));
+      var bar=document.createElement('div');bar.className='stepper';bar.setAttribute('role','tablist');bar.setAttribute('aria-label','Etapas do case');
+      var go=function(i){
+        if(i<0||i>=stages.length)return;
+        stages.forEach(function(s,k){s.hidden=k!==i});
+        [].forEach.call(bar.children,function(b,k){b.setAttribute('aria-selected',k===i);b.tabIndex=k===i?0:-1;b.classList.toggle('done',k<i)});
+        var b=bar.children[i];bar.scrollLeft=Math.max(0,b.offsetLeft-bar.clientWidth/2+b.clientWidth/2);
+        animateBars(stages[i]);
+      };
+      stages.forEach(function(s,i){
+        s.setAttribute('role','tabpanel');
+        var b=document.createElement('button');b.type='button';b.setAttribute('role','tab');
+        b.innerHTML='<div class="dot"><i>'+(i+1)+'</i></div><span>'+esc(s.dataset.step)+'</span>';
+        b.onclick=function(){go(i)};
+        b.onkeydown=function(e){if(e.key==='ArrowRight'&&i<stages.length-1){go(i+1);bar.children[i+1].focus()}if(e.key==='ArrowLeft'&&i>0){go(i-1);bar.children[i-1].focus()}};
+        bar.appendChild(b);
+        var nav=document.createElement('div');nav.className='stage-nav';
+        nav.innerHTML='<button type="button"'+(i===0?' disabled':'')+'>← Anterior</button><button type="button"'+(i===stages.length-1?' disabled':'')+'>Próxima etapa →</button>';
+        nav.children[0].onclick=function(){go(i-1)};nav.children[1].onclick=function(){go(i+1)};
+        s.appendChild(nav);
+      });
+      j.parentNode.insertBefore(bar,j);
+      c._go=go;go(0);
+    }
+    var nx=c.querySelector('.next-case');
+    var prev=cases[(ci-1+cases.length)%cases.length],next=cases[(ci+1)%cases.length];
+    nx.innerHTML='<button type="button" data-open="'+prev.id+'"><span class="label">← Case anterior</span><strong>'+esc(prev.querySelector('h2').textContent)+'</strong></button><button type="button" data-open="'+next.id+'" style="text-align:right"><span class="label">Próximo case →</span><strong>'+esc(next.querySelector('h2').textContent)+'</strong></button>';
+  });
+
+  function open(id,fromHash){
+    var c=document.getElementById(id);if(!c||ids.indexOf(id)<0)return;
+    if(!current)lastFocus=document.activeElement;
+    arts.forEach(function(x){x.hidden=x!==c});
+    current=c;panel.hidden=false;document.body.classList.add('locked');
+    title.textContent=c.dataset.title;panel.scrollTop=0;
+    if(c._go)c._go(0);else animateBars(c);[].forEach.call(c.querySelectorAll('.trail-btn'),function(b){if(b.getAttribute('aria-expanded')==='true')b.click()});
+    if(!fromHash&&location.hash!=='#'+id){try{history.pushState(null,'','#'+id)}catch(e){location.hash=id}}
+    document.getElementById('close').focus({preventScroll:true});
+  }
+  function close(fromHash){
+    if(!current)return;var id=current.id;
+    panel.hidden=true;document.body.classList.remove('locked');current=null;
+    if(!fromHash){try{history.pushState(null,'',location.pathname+location.search)}catch(e){location.hash=''}}
+    var back=document.querySelector('[data-case="'+id+'"] .go')||lastFocus;if(back&&back.focus)back.focus({preventScroll:true});
+  }
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('[data-open]');if(b){e.preventDefault();open(b.dataset.open);return}
+    var card=e.target.closest('.card,.crow');if(card&&!e.target.closest('a'))open(card.dataset.case);
+  });
+  document.getElementById('close').onclick=function(){close()};
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&current)close()});
+  function route(){var h=location.hash.slice(1);if(ids.indexOf(h)>=0)open(h,true);else if(current)close(true)}
+  addEventListener('hashchange',route);addEventListener('popstate',route);route();
+})();
+</script>
+
+
